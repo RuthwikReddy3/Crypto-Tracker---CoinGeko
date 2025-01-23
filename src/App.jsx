@@ -1,9 +1,14 @@
 import './App.css'
-
+import Banner from './Components/Banner/Banner'
+import CoinTable from './Components/CoinTable/CoinTable'
+import NavBar from './Components/NavBar/Navbar'
 function App() {
+
   return (
     <>
-      <button className="btn">Button</button>
+       <NavBar/>
+       <Banner/>
+       <CoinTable/>
     </>
   )
 }
