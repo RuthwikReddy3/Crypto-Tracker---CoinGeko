@@ -5,23 +5,22 @@ import App from './App.jsx'
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter } from 'react-router-dom';
 
+// ✅ Create a QueryClient instance
 const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
-        cacheTime: 0,
+        cacheTime: 0, // Optional: Prevent caching
+        refetchOnWindowFocus: false, // Prevents unnecessary refetching
       },
     },
-  });
-  
+});
 
 createRoot(document.getElementById('root')).render(
-      
-     <BrowserRouter>
-      
-        <QueryClientProvider client={queryClient}>
-            <App />
-        </QueryClientProvider> 
-
-    </BrowserRouter>    
-  );
-  
+  <StrictMode>
+    <QueryClientProvider client={queryClient}>  {/* ✅ Wrap the entire app */}
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </QueryClientProvider>
+  </StrictMode>
+);
