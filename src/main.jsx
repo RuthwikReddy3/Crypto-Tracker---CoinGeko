@@ -16,7 +16,7 @@ const queryClient = new QueryClient({
 });
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <StrictMode> {/*finds probems or errors in project */}
     <QueryClientProvider client={queryClient}>  {/* ✅ Wrap the entire app */}
       <BrowserRouter>
         <App />
