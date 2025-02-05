@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import { FetchCoindetails } from "../Services/FetchCoindetails";
 import currencyStore from "../Zustandstate/Store";
+import CoinInfoContainer from "../Components/Coin Info/CoinInfoContainer";
 function Coindetailspage() {
   const { coinId } = useParams();
   const { currency } = currencyStore();
@@ -59,7 +60,7 @@ function Coindetailspage() {
 
       </div>
       <div className="w-full p-6 md:w-2/3 ">
-          Coin Information
+         <CoinInfoContainer CoinId={coinId}/>
       </div>
     </div>
   );
